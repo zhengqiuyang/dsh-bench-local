@@ -1,5 +1,5 @@
 {
-  "name": "dsh-bench",
+  "name": "dsh-bench-local",
   "version": "0.1.0",
   "description": "Bench your DeepSeek Harness configuration against YOUR tasks, on YOUR machine — deterministic checks, honest reports. The agentbench-local thesis on the dsh headless rail",
   "type": "module",

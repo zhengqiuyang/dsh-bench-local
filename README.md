@@ -1,4 +1,4 @@
-# dsh-bench
+# dsh-bench-local
 
 Bench your [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)
 configuration against **YOUR tasks, on YOUR machine** — deterministic checks,
@@ -15,7 +15,7 @@ different rail: [dsh-trust-suite](https://github.com/zhengqiuyang/dsh-trust-suit
 
 ```sh
 cp bench.example.yaml bench.yaml   # edit tasks to match YOUR repo
-npx dsh-bench run
+npx dsh-bench-local run
 ```
 
 The agent command defaults to `dsh headless` and uses whatever model your
