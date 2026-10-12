@@ -1,0 +1,33 @@
+# dsh-bench — bench your dsh configuration against YOUR tasks.
+# The agent command uses your active profile's configured model; bench twice
+# with two configs to compare them honestly.
+
+# command: [dsh, headless]        # default; the prompt is appended as the
+#                                 # final argument (multi-line prompts are
+#                                 # safe — no shell, no quoting)
+
+tasks:
+  - name: write-hello
+    prompt: |
+      Create a file named hello.txt in the current directory containing
+      exactly the text: hello from bench
+      Reply with the single word DONE when finished.
+    checks:
+      - kind: file_contains
+        path: hello.txt
+        text: "hello from bench"
+
+  - name: answer-check
+    prompt: What is 17 * 23? Reply with only the number.
+    timeoutSec: 120
+    checks:
+      - kind: output_contains
+        text: "391"
+
+  - name: with-setup
+    prompt: Read numbers.txt and reply with their sum as a single number.
+    setup:
+      - "printf '2\\n4\\n6\\n' > numbers.txt"
+    checks:
+      - kind: output_contains
+        text: "12"

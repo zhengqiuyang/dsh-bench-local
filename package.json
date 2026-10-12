@@ -1,0 +1,39 @@
+{
+  "name": "dsh-bench",
+  "version": "0.1.0",
+  "description": "Bench your DeepSeek Harness configuration against YOUR tasks, on YOUR machine — deterministic checks, honest reports. The agentbench-local thesis on the dsh headless rail",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "dsh-bench": "lib/cli.js"
+  },
+  "main": "lib/cli.js",
+  "files": [
+    "lib",
+    "bench.example.yaml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node test/run-tests.mjs"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "benchmark",
+    "ai-agents",
+    "evaluation"
+  ],
+  "dependencies": {
+    "yaml": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
